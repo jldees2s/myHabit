@@ -41,6 +41,11 @@ public class Users {
         this.userName = userName;
     }
 
+    public String getPasswordHash() {
+        return passwordHash;
+    }
 
-
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
 }
