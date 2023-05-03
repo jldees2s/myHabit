@@ -45,7 +45,8 @@ public class Users {
         return passwordHash;
     }
 
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
+    //think i know how to fix this
+    public void setPasswordHash(String password) {
+        this.passwordHash = encoder.encode(password);
     }
 }
