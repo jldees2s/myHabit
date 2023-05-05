@@ -4,11 +4,13 @@ import com.MyHabit.MyHabit.models.Habit;
 import com.MyHabit.MyHabit.models.Users;
 import com.MyHabit.MyHabit.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/login")
@@ -18,12 +20,9 @@ public class AuthenticationController {
     UserRepo userRepo;
 
     private static final String userSessionKey = "user";
+    private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
-    @GetMapping
-    @ResponseBody
-    public String sayHello(){
-        return "Test hello";
-    }
+    //redo
 
     private static void setUserInSession(HttpSession session, Users user){
         session.setAttribute(userSessionKey, user.getId());
@@ -44,9 +43,33 @@ public class AuthenticationController {
         return usersOptional.get();
     }
 
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public Users addUsers(@RequestBody Users user) {
-        Users newUser = userRepo.save(user);
-        return newUser;
+    @PostMapping("/register")
+    public String addUsers(String userName, String password) {
+        Users existingUser = userRepo.getByUserName(userName);
+        System.out.println(password);
+        System.out.println(userName);
+        //placeholder returns
+        if (existingUser != null){
+            return "login";
+        } else {
+            Users newUser = new Users(userName, password);
+            userRepo.save(newUser);
+            return "home";
+        }
+    }
+
+    @PostMapping("/verifylogin")
+    public String loginUser(String userName, String password){
+        Users existingUser = userRepo.getByUserName(userName);
+
+        if (existingUser == null){
+            return "please register first";
+        }
+        if (existingUser.isMatchingPassword(password)){
+            return "login successful";
+        } else{
+           return "oops";
+        }
+
     }
 }
