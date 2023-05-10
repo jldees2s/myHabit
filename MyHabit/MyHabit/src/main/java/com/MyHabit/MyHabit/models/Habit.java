@@ -9,7 +9,7 @@ public class Habit {
 
     @Id
     @GeneratedValue
-    private int Id;
+    private int id;
 
     @NotBlank
     private String name;
@@ -34,7 +34,7 @@ public class Habit {
     }
 
     public int getId() {
-        return Id;
+        return id;
     }
 
 }
