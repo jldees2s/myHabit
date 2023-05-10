@@ -49,6 +49,8 @@
 
         div#sidebar {
             background: #7cb71c;
+            border-style: solid;
+            border-color: black;
         }
 
         div#navigation li {
@@ -56,7 +58,9 @@
         }
 
         div#extra {
-            background: #147FA9;
+            background: white;
+            border-style: solid;
+            border-color: black;
         }
 
         div#footer {
@@ -91,6 +95,13 @@
         }
 
         div#footer {
+            text-align: center;
             clear: both;
             width: 100%;
+        }
+
+        div.image::before {
+           border-radius: 4px;
+           padding-left: 10px;
+           }
         }
