@@ -1,18 +1,17 @@
 package com.MyHabit.MyHabit.models;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
-public class UserHabit extends Habit{
+public class UserHabit{
 
     // FIELDS
-    // inherits id, name, description from Habit class
+    @Id
+    @GeneratedValue
+    private int id;
 
-//    @ManyToOne
-
-    private Users userId;
-
+    // private ??? startDate
+    // private ??? endDate
     private boolean active;
     private boolean complete;
     private boolean hidden;
@@ -20,18 +19,10 @@ public class UserHabit extends Habit{
     // CONSTRUCTORS
     public UserHabit() {}
 
-    public UserHabit(Users userId, boolean active, boolean complete, boolean hidden) {
-        super();
-        this.userId = userId;
-        this.active = active;
-        this.complete = complete;
-        this.hidden = hidden;
-    }
 
     // GETTERS & SETTERS
-
-    public Users getUserId() {
-        return userId;
+    public int getId() {
+        return id;
     }
 
     public boolean isActive() {

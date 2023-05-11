@@ -1,8 +1,8 @@
 package com.MyHabit.MyHabit.models;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Habit {
@@ -16,6 +16,7 @@ public class Habit {
 
     @NotBlank
     private String description;
+
 
     public String getName() {
         return name;
