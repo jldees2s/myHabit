@@ -13,6 +13,7 @@ font-weight: 300;
 p {
 padding: 10px 20px;
 line-height: 1.8;
+font-size: 9pt;
 }
 
 ul li {
@@ -123,13 +124,17 @@ max-width: 680px;
 margin-top: 20px;
 }
 
+.container2 {
+max-width: 680px;
+margin-top: 20px;
+}
+
 .padding
 {
 width:175px;
 height:175px;
 margin: 10px;
 }
-
 
 .button-group {
 margin-bottom: 20px;
