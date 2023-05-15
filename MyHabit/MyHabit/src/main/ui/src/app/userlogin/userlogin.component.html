@@ -1,6 +1,6 @@
 
 
-<form>
+<form name = "form" (ngSubmit) = "login()" #f = "ngForm">
   <div class="imgcontainer">
 <img src="https://cdn.discordapp.com/attachments/805117565117923339/1106395930590187570/myhabit.png" class="center">
 </div>
@@ -8,12 +8,12 @@
 
   <div class="input">
     <label></label>
-    <input type="username" name="" placeholder="Enter Username">
+    <input type="username" name="usernName" [(ngModel)] = "model.usernName" placeholder="Enter Username">
   </div>
 
   <div class="input">
   <label></label>
-  <input type="password" name="" placeholder="Enter Password">
+  <input type="password" name="password" [(ngModel)] = "model.password" placeholder="Enter Password">
 </div>
 
 <div class="button">

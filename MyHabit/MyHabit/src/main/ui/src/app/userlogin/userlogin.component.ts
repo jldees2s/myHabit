@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -8,12 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserloginComponent implements OnInit {
   
+  model: any = {};
 
-  constructor() { }
+  constructor(
+    private http: HttpClient,
+  ) { }
 
   ngOnInit(): void {
   }
 
+  login(){
+    let url = 'localhost:8080/login'
+    this.http.post<any>(url,{
+      
+    })
+  }
 }
 
 
