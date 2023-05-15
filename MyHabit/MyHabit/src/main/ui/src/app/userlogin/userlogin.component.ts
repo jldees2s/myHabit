@@ -19,10 +19,16 @@ export class UserloginComponent implements OnInit {
   }
 
   login(){
-    let url = 'localhost:8080/login'
-    this.http.post<any>(url,{
-      
+    let url = 'http://localhost:8080/login'
+    let userData = {
+      userName: this.model.userName,
+      password: this.model.password
+    };
+    console.log(userData);
+    this.http.post<any>(url, userData).subscribe(res =>{
+      console.log("test")
     })
+    console.log()
   }
 }
 
