@@ -1,0 +1,33 @@
+.container {
+  font-family: arial;
+  font-size: 16px;
+  text-align: center;
+ 
+  
+  
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+
+.input{
+  font-family: arial;
+  font-size: 24px;
+  text-align: center;
+}
+.button{
+ 
+  font-family: arial;
+  font-size: 16px;
+  text-align: center;
+  
+}
+
+
+P {
+    text-align: center;
+}
