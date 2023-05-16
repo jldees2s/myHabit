@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-userlogin',
@@ -13,6 +14,7 @@ export class UserloginComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -27,7 +29,15 @@ export class UserloginComponent implements OnInit {
     console.log(userData);
     this.http.post<any>(url, userData).subscribe(res =>{
       console.log("test")
-    })
+      console.log(res)
+      if(res.id !== 0){
+         this.router.navigate(["home"])
+      }
+    }),
+    // // (error: HttpErrorResponse) => {
+    // //   alert(error.message);
+    // },
+
     console.log()
   }
 }
