@@ -1,8 +1,7 @@
 package com.MyHabit.MyHabit.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Profile {
@@ -12,27 +11,58 @@ public class Profile {
     @GeneratedValue
     private int id;
 
-    // private ??? profileImage;
-    // private int userId;
+    // one user to one user profile, matched on userId
+    @OneToOne
+    private Users user;
+
+    // maybe this should be userhabits?
+    @OneToMany
+    private List<Habit> habits;
+
+    private String profileImageURL;
     private String status;
     private String bio;
-    // private ??? profileBackground;
+
 
     // CONSTRUCTORS
-
     public Profile() {}
 
-//    public Profile(int id, String status, String bio) {
-//        this.id = id;
-//        this.status = status;
-//        this.bio = bio;
-//    }
+    public Profile(int id, Users user, List<Habit> habits, String profileImageURL, String status, String bio) {
+        this.id = id;
+        this.user = user;
+        this.habits = habits;
+        this.profileImageURL = profileImageURL;
+        this.status = status;
+        this.bio = bio;
+    }
 
     // GETTERS & SETTERS
-
-
     public int getId() {
         return id;
+    }
+
+    public Users getUser() {
+        return user;
+    }
+
+    public void setUser(Users user) {
+        this.user = user;
+    }
+
+    public List<Habit> getHabits() {
+        return habits;
+    }
+
+    public void setHabits(List<Habit> habits) {
+        this.habits = habits;
+    }
+
+    public String getProfileImageURL() {
+        return profileImageURL;
+    }
+
+    public void setProfileImageURL(String profileImageURL) {
+        this.profileImageURL = profileImageURL;
     }
 
     public String getStatus() {
