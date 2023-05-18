@@ -26,6 +26,7 @@ public class AuthenticationController {
 
     //redo
 
+
     private static void setUserInSession(HttpSession session, Users user){
         session.setAttribute(userSessionKey, user.getId());
     }
@@ -66,8 +67,11 @@ public class AuthenticationController {
     @PostMapping("/login")
     public String loginUser(LoginDTO loginDTO){
         Users existingUser = userRepo.getByUserName(loginDTO.getUserName());
+        System.out.println("test");
+        System.out.println(existingUser);
 
         if (existingUser == null){
+
             return "please register first";
         }
         if (existingUser.isMatchingPassword(loginDTO.getPassword())){
