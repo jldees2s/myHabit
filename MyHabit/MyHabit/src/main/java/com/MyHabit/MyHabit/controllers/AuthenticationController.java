@@ -14,7 +14,6 @@ import java.util.Optional;
 
 
 @RestController
-@RequestMapping("/login")
 public class AuthenticationController {
 
     @Autowired
@@ -59,7 +58,7 @@ public class AuthenticationController {
         }
     }
 
-    @PostMapping
+    @PostMapping("/login")
     public String loginUser(LoginDTO loginDTO){
         Users existingUser = userRepo.getByUserName(loginDTO.getUserName());
 
