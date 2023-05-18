@@ -52,15 +52,14 @@ public class AuthenticationController {
         //placeholder returns
         if (existingUser != null){
             return "login";
-        } else {
-            if(registrationDTO.verifyPassword(registrationDTO.getPassword(), registrationDTO.getVerifyPassword()) == true) {
-                Users newUser = new Users(registrationDTO.getUserName(), registrationDTO.getPassword());
+        } else if (!(registrationDTO.getPassword().equals(registrationDTO.getSecondPassword()))) {
+            return "bad password";
 
-                userRepo.save(newUser);
-                return "home";
-            } else {
-                return "please check your password";
-            }
+        } else {
+           Users newUser = new Users(registrationDTO.getUserName(),registrationDTO.getPassword());
+           userRepo.save(newUser);
+           return "account created";
+
         }
     }
 

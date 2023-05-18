@@ -5,7 +5,7 @@ public class RegistrationDTO {
 
     private String password;
 
-    private String passwordVerification;
+    private String secondPassword;
 
     public String getUserName() {
         return userName;
@@ -23,12 +23,12 @@ public class RegistrationDTO {
         this.password = password;
     }
 
-    public String getVerifyPassword() {
-        return passwordVerification;
+    public String getSecondPassword() {
+        return secondPassword;
     }
 
-    public void setVerifyPassword(String verifyPassword) {
-        this.passwordVerification = passwordVerification;
+    public void setPasswordVerification(String verifyPassword) {
+        this.secondPassword = secondPassword;
     }
 
     public boolean verifyPassword(String password, String passwordVerification){
