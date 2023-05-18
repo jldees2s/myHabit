@@ -47,7 +47,7 @@ public class AuthenticationController {
     }
 
     @PostMapping("/register")
-    public String addUsers(RegistrationDTO registrationDTO) {
+    public String addUsers(@RequestBody RegistrationDTO registrationDTO) {
         Users existingUser = userRepo.getByUserName(registrationDTO.getUserName());
         //placeholder returns
         if (existingUser != null){
@@ -65,7 +65,7 @@ public class AuthenticationController {
     }
 
     @PostMapping("/login")
-    public String loginUser(LoginDTO loginDTO){
+    public String loginUser(@RequestBody LoginDTO loginDTO){
         Users existingUser = userRepo.getByUserName(loginDTO.getUserName());
         System.out.println("test");
         System.out.println(existingUser);
