@@ -1,6 +1,7 @@
 package com.MyHabit.MyHabit.controllers;
 
 import com.MyHabit.MyHabit.DTO.LoginDTO;
+import com.MyHabit.MyHabit.DTO.RegistrationDTO;
 import com.MyHabit.MyHabit.models.Habit;
 import com.MyHabit.MyHabit.models.Users;
 import com.MyHabit.MyHabit.repositories.UserRepo;
@@ -9,6 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.imageio.spi.RegisterableService;
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
@@ -44,17 +46,20 @@ public class AuthenticationController {
     }
 
     @PostMapping("/register")
-    public String addUsers(String userName, String password) {
-        Users existingUser = userRepo.getByUserName(userName);
-        System.out.println(password);
-        System.out.println(userName);
+    public String addUsers(RegistrationDTO registrationDTO) {
+        Users existingUser = userRepo.getByUserName(registrationDTO.getUserName());
         //placeholder returns
         if (existingUser != null){
             return "login";
         } else {
-            Users newUser = new Users(userName, password);
-            userRepo.save(newUser);
-            return "home";
+            if(registrationDTO.verifyPassword(registrationDTO.getPassword(), registrationDTO.getVerifyPassword()) == true) {
+                Users newUser = new Users(registrationDTO.getUserName(), registrationDTO.getPassword());
+
+                userRepo.save(newUser);
+                return "home";
+            } else {
+                return "please check your password";
+            }
         }
     }
 
