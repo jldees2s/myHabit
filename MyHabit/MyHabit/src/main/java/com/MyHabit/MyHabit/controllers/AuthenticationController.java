@@ -6,6 +6,8 @@ import com.MyHabit.MyHabit.models.Habit;
 import com.MyHabit.MyHabit.models.Users;
 import com.MyHabit.MyHabit.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -64,19 +66,19 @@ public class AuthenticationController {
     }
 
     @PostMapping("/login")
-    public String loginUser(@RequestBody LoginDTO loginDTO){
+    public ResponseEntity <?> loginUser(@RequestBody LoginDTO loginDTO){
         Users existingUser = userRepo.getByUserName(loginDTO.getUserName());
         System.out.println("test");
         System.out.println(existingUser);
 
         if (existingUser == null){
 
-            return "please register first";
+            return new ResponseEntity<String>("Please check your login info", HttpStatus.BAD_REQUEST);
         }
         if (existingUser.isMatchingPassword(loginDTO.getPassword())){
-            return "login successful";
+            return new ResponseEntity<Users>(existingUser, HttpStatus.OK);
         } else{
-           return "oops";
+           return new ResponseEntity<String>("Please check your login info", HttpStatus.BAD_REQUEST);
         }
 
     }
