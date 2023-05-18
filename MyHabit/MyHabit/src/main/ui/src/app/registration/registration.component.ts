@@ -25,7 +25,7 @@ export class RegistrationComponent implements OnInit {
       userName: this.model.userName,
       password: this.model.password,
       passwordVerification: this.model.passwordVerification
-    }
+    };
     console.log(userData)
     this.http.post<any>(url, userData).subscribe(res =>{
       console.log(res)
