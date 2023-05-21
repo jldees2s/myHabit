@@ -2,9 +2,7 @@ package com.MyHabit.MyHabit.models;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -17,6 +15,11 @@ public class Users {
     @NotNull
     private String passwordHash;
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
+    // connection to user's profile table
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private Profile profile;
 
     public Users(){}
 
