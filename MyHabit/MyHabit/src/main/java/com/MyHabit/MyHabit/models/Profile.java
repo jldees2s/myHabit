@@ -26,6 +26,10 @@ public class Profile {
     private String lastName;
 
     @NotBlank
+    @Size(min = 1, max = 35)
+    private String displayName; // the name a user wants to display on their profile, instead of their first and last names
+
+    @NotBlank
     @Email
     private String email;
 
@@ -57,9 +61,10 @@ public class Profile {
     // CONSTRUCTORS
     public Profile() {}
 
-    public Profile(String firstName, String lastName, String email, String location, String status, String bio, String profileImageURL, Users user, List<Habit> habits) {
+    public Profile(String firstName, String lastName, String displayName, String email, String location, String status, String bio, String profileImageURL, Users user, List<Habit> habits) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.displayName = displayName;
         this.email = email;
         this.location = location;
         this.status = status;
@@ -88,6 +93,14 @@ public class Profile {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 
     public String getEmail() {
@@ -152,6 +165,7 @@ public class Profile {
                 "Profile Id: " + id +
                 "First Name: " + firstName + '\n' +
                 "Last Name: " + lastName + '\n' +
+                "Display Name: " + displayName + '\n' +
                 "Email: " + email + '\n' +
                 "Location: " + location + '\n' +
                 "Status: " + status + '\n' +
