@@ -1,44 +1,133 @@
 package com.MyHabit.MyHabit.models;
 
+import org.hibernate.validator.constraints.URL;
+
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
 public class Profile {
 
     // FIELDS
-    @Id
+    @Id // primary key
     @GeneratedValue
+    @Column(nullable = false, updatable = false) // cannot be changed once its set
     private int id;
 
-    // one user to one user profile, matched on userId
+    @NotBlank
+    @Size(min = 1, max = 35)
+    private String firstName;
+
+    @NotBlank
+    @Size(min = 1, max = 35)
+    private String lastName;
+
+    @NotBlank
+    @Email
+    private String email;
+
+    // optional fields
+    @Size(min = 1, max = 35)
+    private String location;
+
+    @Size(max = 150)
+    private String status;
+
+    @Size(max = 500)
+    private String bio;
+
+    @URL
+    private String profileImageURL;
+
+
+    // TABLE RELATIONSHIPS
+    // one profile to one user, matched on userId
     @OneToOne
     private Users user;
 
+    // one profile to many userhabits, matched on user_habit_id
     // this should be userhabits, but userhabits is not accessible on this branch
     @OneToMany
     private List<Habit> habits;
-
-    private String profileImageURL;
-    private String status;
-    private String bio;
 
 
     // CONSTRUCTORS
     public Profile() {}
 
-    public Profile(int id, Users user, List<Habit> habits, String profileImageURL, String status, String bio) {
-        this.id = id;
-        this.user = user;
-        this.habits = habits;
-        this.profileImageURL = profileImageURL;
+    public Profile(String firstName, String lastName, String email, String location, String status, String bio, String profileImageURL, Users user, List<Habit> habits) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.location = location;
         this.status = status;
         this.bio = bio;
+        this.profileImageURL = profileImageURL;
+        this.user = user;
+        this.habits = habits;
     }
 
     // GETTERS & SETTERS
     public int getId() {
         return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public String getProfileImageURL() {
+        return profileImageURL;
+    }
+
+    public void setProfileImageURL(String profileImageURL) {
+        this.profileImageURL = profileImageURL;
     }
 
     public Users getUser() {
@@ -57,27 +146,17 @@ public class Profile {
         this.habits = habits;
     }
 
-    public String getProfileImageURL() {
-        return profileImageURL;
-    }
-
-    public void setProfileImageURL(String profileImageURL) {
-        this.profileImageURL = profileImageURL;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getBio() {
-        return bio;
-    }
-
-    public void setBio(String bio) {
-        this.bio = bio;
+    @Override
+    public String toString() {
+        return "Profile Information \n" +
+                "id: " + id +
+                "First Name: " + firstName + '\n' +
+                "Last Name: " + lastName + '\n' +
+                "Email: " + email + '\n' +
+                "Location: " + location + '\n' +
+                "Status: " + status + '\n' +
+                "Bio: " + bio + '\n' +
+                "Profile Image: " + profileImageURL + '\n' +
+                "Habits: " + habits + '\n';
     }
 }
