@@ -30,7 +30,7 @@ public class ProfileController {
             model.addAttribute("profile", profile);
             return "profile/view";
         } else {
-            return "redirect:../";
+            return "/profile";
         }
     }
 
@@ -49,7 +49,7 @@ public class ProfileController {
         } else {
             profileRepo.save(newProfile);
         }
-        return "redirect:";
+        return "/profile";
     }
 
 }

@@ -15,7 +15,7 @@ public class Profile {
     @OneToOne
     private Users user;
 
-    // maybe this should be userhabits?
+    // this should be userhabits, but userhabits is not accessible on this branch
     @OneToMany
     private List<Habit> habits;
 
