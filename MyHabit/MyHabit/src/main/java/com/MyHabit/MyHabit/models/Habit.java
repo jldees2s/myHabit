@@ -17,6 +17,14 @@ public class Habit {
     @NotBlank
     private String description;
 
+    // table relationships
+    @ManyToOne
+    private Users user;
+
+    @ManyToOne
+    @JoinColumn(name = "habit_id")
+    private UserHabit habitSettings;
+
 
     public String getName() {
         return name;

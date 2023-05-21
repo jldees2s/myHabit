@@ -1,6 +1,7 @@
 package com.MyHabit.MyHabit.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class UserHabit{
@@ -15,6 +16,12 @@ public class UserHabit{
     private boolean active;
     private boolean complete;
     private boolean hidden;
+
+    // table relationships
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private List<Habit> habit;
+
 
     // CONSTRUCTORS
     public UserHabit() {}
