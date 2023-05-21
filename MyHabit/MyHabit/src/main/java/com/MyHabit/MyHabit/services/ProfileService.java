@@ -1,5 +1,6 @@
 package com.MyHabit.MyHabit.services;
 
+import com.MyHabit.MyHabit.exceptions.UserNotFoundException;
 import com.MyHabit.MyHabit.models.Profile;
 import com.MyHabit.MyHabit.repositories.ProfileRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,45 +19,44 @@ public class ProfileService {
     }
 
     // METHODS
-
     // add entirely new profile
-    public Profile addProfile(Profile profile){
-        profile.setFirstName();
-        profile.setLastName();
-        profile.setDisplayName();
-        profile.setEmail();
-        profile.setLocation();
-        profile.setProfileImageURL();
-        profile.setStatus();
-        profile.setBio();
+    public Profile addProfile(Profile profile, String first, String last, String display, String email, String location, String pic, String status, String bio){
+        profile.setFirstName(first);
+        profile.setLastName(last);
+        profile.setDisplayName(display);
+        profile.setEmail(email);
+        profile.setLocation(location);
+        profile.setProfileImageURL(pic);
+        profile.setStatus(status);
+        profile.setBio(bio);
         return profileRepo.save(profile);
     }
 
     // update existing profile (personal information ONLY)
-    public Profile updateProfile(Profile profile){
-        profile.setFirstName();
-        profile.setLastName();
-        profile.setDisplayName();
-        profile.setEmail();
-        profile.setLocation();
+    public Profile updateProfile(Profile profile, String first, String last, String display, String email, String location){
+        profile.setFirstName(first);
+        profile.setLastName(last);
+        profile.setDisplayName(display);
+        profile.setEmail(email);
+        profile.setLocation(location);
         return profileRepo.save(profile);
     }
 
     // update profile picture
-    public Profile updateProfilePic(Profile profile){
-        profile.setProfileImageURL();
+    public Profile updateProfilePic(Profile profile, String pic){
+        profile.setProfileImageURL(pic);
         return profileRepo.save(profile);
     }
 
     // update status
-    public Profile updateStatus(Profile profile){
-        profile.setStatus();
+    public Profile updateStatus(Profile profile, String status){
+        profile.setStatus(status);
         return profileRepo.save(profile);
     }
 
     // update bio
-    public Profile updateBio(Profile profile){
-        profile.setBio();
+    public Profile updateBio(Profile profile, String bio){
+        profile.setBio(bio);
         return profileRepo.save(profile);
     }
 
