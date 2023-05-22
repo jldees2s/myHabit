@@ -48,20 +48,19 @@ public class Profile {
 
 
     // TABLE RELATIONSHIPS
-    // one profile to one user, matched on userId
-    @OneToOne
+    @OneToOne // one profile to one user, matched on userId
+    @JoinColumn(name = "id")
     private Users user;
 
-    // one profile to many userhabits, matched on user_habit_id
-    // this should be userhabits, but userhabits is not accessible on this branch
-    @OneToMany
-    private List<Habit> habits;
+    @OneToMany // one profile to many userhabits, matched on user_habit_id
+    @JoinColumn(name = "id")
+    private List<UserHabit> habits;
 
 
     // CONSTRUCTORS
     public Profile() {}
 
-    public Profile(String firstName, String lastName, String displayName, String email, String location, String status, String bio, String profileImageURL, Users user, List<Habit> habits) {
+    public Profile(String firstName, String lastName, String displayName, String email, String location, String status, String bio, String profileImageURL, Users user, List<UserHabit> habits) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.displayName = displayName;
@@ -151,11 +150,11 @@ public class Profile {
         this.user = user;
     }
 
-    public List<Habit> getHabits() {
+    public List<UserHabit> getHabits() {
         return habits;
     }
 
-    public void setHabits(List<Habit> habits) {
+    public void setHabits(List<UserHabit> habits) {
         this.habits = habits;
     }
 

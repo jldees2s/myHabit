@@ -22,7 +22,7 @@ public class Habit {
     private Users user;
 
     @ManyToOne
-    @JoinColumn(name = "habit_id")
+//    @JoinColumn(name = "id") TODO: figure out the table relationships for habits to users, userhabits to user?
     private UserHabit habitSettings;
 
 

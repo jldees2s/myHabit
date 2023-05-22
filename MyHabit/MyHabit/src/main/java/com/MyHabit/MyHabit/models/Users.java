@@ -2,14 +2,7 @@ package com.MyHabit.MyHabit.models;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-<<<<<<< HEAD
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-=======
 import javax.persistence.*;
->>>>>>> main
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -26,12 +19,12 @@ public class Users {
 
 
     // table relationships
-    @OneToMany
+    @OneToMany // one user object to many habit objects
+    @JoinColumn(name = "id")
     private List<Habit> habits;
 
     // connection to user's profile table
-    @OneToOne
-    @JoinColumn(name = "user_id")
+    @OneToOne // one user to one profile
     private Profile profile;
 
 
