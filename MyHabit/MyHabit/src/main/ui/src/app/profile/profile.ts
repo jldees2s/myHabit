@@ -8,6 +8,6 @@ email: string;
 location: string;
 status: string;
 bio: string;
-profileImageURL: Images[];
+profileImageURL: string;
 habit: string;
 }

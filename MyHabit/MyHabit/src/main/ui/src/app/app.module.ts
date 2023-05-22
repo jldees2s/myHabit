@@ -7,9 +7,11 @@ import { AppComponent } from './app.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { HttpClientModule, HttpClient} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
-  {path:"login", component: UserloginComponent}]
+  {path:"login", component: UserloginComponent},
+  {path:"profile", component: ProfileComponent}]
 
 
 @NgModule({
@@ -27,7 +29,7 @@ const routes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
-  
+export class AppModule {
+
 }
 
