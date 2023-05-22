@@ -1,10 +1,9 @@
 package com.MyHabit.MyHabit.models;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-public class UserHabit{
+public class HabitSettings {
 
     // FIELDS
     @Id
@@ -18,13 +17,18 @@ public class UserHabit{
     private boolean hidden;
 
     // table relationships
-    @OneToMany
-    @JoinColumn(name = "user_id")
-    private List<Habit> habit;
+    @OneToOne
+    private Habit habit;
+
+    @OneToOne
+    private Users user;
+
+//    @OneToMany
+//    private List<Habit> habit;
 
 
     // CONSTRUCTORS
-    public UserHabit() {}
+    public HabitSettings() {}
 
 
     // GETTERS & SETTERS

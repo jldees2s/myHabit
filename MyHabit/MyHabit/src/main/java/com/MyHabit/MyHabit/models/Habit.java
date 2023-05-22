@@ -1,8 +1,6 @@
 package com.MyHabit.MyHabit.models;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 public class Habit {
@@ -18,12 +16,18 @@ public class Habit {
     private String description;
 
     // table relationships
-    @ManyToOne
+    @ManyToOne // many habits to one user
+    @JoinColumn(name = "user_id")
     private Users user;
 
-    @ManyToOne
-//    @JoinColumn(name = "id") TODO: figure out the table relationships for habits to users, userhabits to user?
-    private UserHabit habitSettings;
+    @OneToOne // one habit to one habit settings
+    @JoinColumn(name = "id")
+    private HabitSettings habitSettings;
+
+    @ManyToOne // many habits to one profile
+    @JoinColumn(name = "profile_id")
+    private Profile profile;
+
 
 
     public String getName() {

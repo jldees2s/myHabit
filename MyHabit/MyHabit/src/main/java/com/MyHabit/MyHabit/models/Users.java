@@ -19,9 +19,12 @@ public class Users {
 
 
     // table relationships
-    @OneToMany // one user object to many habit objects
-    @JoinColumn(name = "id")
+    @OneToMany(mappedBy = "user") // one user object to many habit objects
     private List<Habit> habits;
+
+    @OneToMany // one user to many habit settings objects
+    @JoinColumn(name = "id")
+    private List<HabitSettings> habitSettings;
 
     // connection to user's profile table
     @OneToOne // one user to one profile
