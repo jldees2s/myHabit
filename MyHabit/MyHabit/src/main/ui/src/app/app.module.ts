@@ -1,27 +1,33 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProfileComponent } from './profile/profile.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserloginComponent } from './userlogin/userlogin.component';
+import { HttpClientModule, HttpClient} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
-{path:"login", component: UserloginComponent}]
+  {path:"login", component: UserloginComponent}]
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent
+    UserloginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
-    BrowserAnimationsModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
+export class AppModule { 
+  
 }
+

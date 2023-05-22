@@ -1,5 +1,6 @@
 package com.MyHabit.MyHabit.controllers;
 
+import com.MyHabit.MyHabit.DTO.LoginDTO;
 import com.MyHabit.MyHabit.models.Habit;
 import com.MyHabit.MyHabit.models.Users;
 import com.MyHabit.MyHabit.repositories.UserRepo;
@@ -58,14 +59,14 @@ public class AuthenticationController {
         }
     }
 
-    @PostMapping("/verifylogin")
-    public String loginUser(String userName, String password){
-        Users existingUser = userRepo.getByUserName(userName);
+    @PostMapping
+    public String loginUser(LoginDTO loginDTO){
+        Users existingUser = userRepo.getByUserName(loginDTO.getUserName());
 
         if (existingUser == null){
             return "please register first";
         }
-        if (existingUser.isMatchingPassword(password)){
+        if (existingUser.isMatchingPassword(loginDTO.getPassword())){
             return "login successful";
         } else{
            return "oops";

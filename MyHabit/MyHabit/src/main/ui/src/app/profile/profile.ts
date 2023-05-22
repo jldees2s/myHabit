@@ -1,8 +1,13 @@
 export interface profile {
 id: number;
 user: string;
-habits: string;
-profileImageURL: Images[];
+firstName: string;
+lastName: string;
+displayName: string;
+email: string;
+location: string;
 status: string;
 bio: string;
+profileImageURL: Images[];
+habit: string;
 }
