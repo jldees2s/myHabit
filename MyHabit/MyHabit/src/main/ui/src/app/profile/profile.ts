@@ -1,3 +1,8 @@
 export interface profile {
-name: string;
+id: number;
+user: string;
+habits: string;
+profileImageURL: Images[];
+status: string;
+bio: string;
 }

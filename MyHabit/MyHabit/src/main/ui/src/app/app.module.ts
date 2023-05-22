@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+const routes: Routes = [
+{path:"login", component: UserloginComponent}]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,9 +17,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule.forRoot(routes),
     BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
