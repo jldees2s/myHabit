@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { HttpClientModule, HttpClient} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { TimelineComponent } from './timeline/timeline.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
   {path:"login", component: UserloginComponent}]
@@ -16,6 +18,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     UserloginComponent,
+    NavbarComponent,
+    TimelineComponent,
   ],
   imports: [
     BrowserModule,
