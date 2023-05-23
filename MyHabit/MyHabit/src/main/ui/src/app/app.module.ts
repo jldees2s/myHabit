@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { HttpClientModule, HttpClient} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { TimelineComponent } from './timeline/timeline.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 import { RegistrationComponent } from './registration/registration.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -22,7 +24,9 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     UserloginComponent,
-    RegistrationComponent,
+    NavbarComponent,
+    TimelineComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
