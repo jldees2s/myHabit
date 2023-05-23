@@ -4,6 +4,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Entity
 public class Users {
@@ -16,10 +17,19 @@ public class Users {
     private String passwordHash;
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
+
+    // table relationships
+    @OneToMany(mappedBy = "user") // one user object to many habit objects
+    private List<Habit> habits;
+
+    @OneToMany // one user to many habit settings objects
+    @JoinColumn(name = "id")
+    private List<HabitSettings> habitSettings;
+
     // connection to user's profile table
-    @OneToOne
-    @JoinColumn(name = "user_id")
+    @OneToOne // one user to one profile
     private Profile profile;
+
 
     public Users(){}
 

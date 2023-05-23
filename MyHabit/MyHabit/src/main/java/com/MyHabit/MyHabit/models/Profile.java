@@ -48,118 +48,133 @@ public class Profile {
 
 
     // TABLE RELATIONSHIPS
-    // one profile to one user, matched on userId
-    @OneToOne
+    @OneToOne // one profile to one user, matched on userId
+    @JoinColumn(name = "id")
     private Users user;
 
-    // one profile to many userhabits, matched on user_habit_id
-    // this should be userhabits, but userhabits is not accessible on this branch
-    @OneToMany
+    @OneToMany // one profile to many userhabits, matched on user_habit_id
+    @JoinColumn(name = "id")
+    private List<HabitSettings> habitSettings;
+
+    @OneToMany(mappedBy = "profile") // one user object to many habit objects
     private List<Habit> habits;
 
 
     // CONSTRUCTORS
     public Profile() {}
 
-    public Profile(String firstName, String lastName, String displayName, String email, String location, String status, String bio, String profileImageURL, Users user, List<Habit> habits) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.displayName = displayName;
-        this.email = email;
-        this.location = location;
-        this.status = status;
-        this.bio = bio;
-        this.profileImageURL = profileImageURL;
-        this.user = user;
-        this.habits = habits;
-    }
+  public Profile(String firstName, String lastName, String displayName, String email, String location, String status, String bio, String profileImageURL, Users user, List<HabitSettings> habitSettings, List<Habit> habits) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.displayName = displayName;
+    this.email = email;
+    this.location = location;
+    this.status = status;
+    this.bio = bio;
+    this.profileImageURL = profileImageURL;
+    this.user = user;
+    this.habitSettings = habitSettings;
+    this.habits = habits;
+  }
 
-    // GETTERS & SETTERS
-    public int getId() {
-        return id;
-    }
+  // GETTERS & SETTERS
+  public int getId() {
+    return id;
+  }
 
-    public String getFirstName() {
-        return firstName;
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+  public String getFirstName() {
+    return firstName;
+  }
 
-    public String getLastName() {
-        return lastName;
-    }
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+  public String getLastName() {
+    return lastName;
+  }
 
-    public String getDisplayName() {
-        return displayName;
-    }
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
 
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
-    }
+  public String getDisplayName() {
+    return displayName;
+  }
 
-    public String getEmail() {
-        return email;
-    }
+  public void setDisplayName(String displayName) {
+    this.displayName = displayName;
+  }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public String getEmail() {
+    return email;
+  }
 
-    public String getLocation() {
-        return location;
-    }
+  public void setEmail(String email) {
+    this.email = email;
+  }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
+  public String getLocation() {
+    return location;
+  }
 
-    public String getStatus() {
-        return status;
-    }
+  public void setLocation(String location) {
+    this.location = location;
+  }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+  public String getStatus() {
+    return status;
+  }
 
-    public String getBio() {
-        return bio;
-    }
+  public void setStatus(String status) {
+    this.status = status;
+  }
 
-    public void setBio(String bio) {
-        this.bio = bio;
-    }
+  public String getBio() {
+    return bio;
+  }
 
-    public String getProfileImageURL() {
-        return profileImageURL;
-    }
+  public void setBio(String bio) {
+    this.bio = bio;
+  }
 
-    public void setProfileImageURL(String profileImageURL) {
-        this.profileImageURL = profileImageURL;
-    }
+  public String getProfileImageURL() {
+    return profileImageURL;
+  }
 
-    public Users getUser() {
-        return user;
-    }
+  public void setProfileImageURL(String profileImageURL) {
+    this.profileImageURL = profileImageURL;
+  }
 
-    public void setUser(Users user) {
-        this.user = user;
-    }
+  public Users getUser() {
+    return user;
+  }
 
-    public List<Habit> getHabits() {
-        return habits;
-    }
+  public void setUser(Users user) {
+    this.user = user;
+  }
 
-    public void setHabits(List<Habit> habits) {
-        this.habits = habits;
-    }
+  public List<HabitSettings> getHabitSettings() {
+    return habitSettings;
+  }
 
-    @Override
+  public void setHabitSettings(List<HabitSettings> habitSettings) {
+    this.habitSettings = habitSettings;
+  }
+
+  public List<Habit> getHabits() {
+    return habits;
+  }
+
+  public void setHabits(List<Habit> habits) {
+    this.habits = habits;
+  }
+
+  @Override
     public String toString() {
         return "Profile Information \n" +
                 "Profile Id: " + id +
