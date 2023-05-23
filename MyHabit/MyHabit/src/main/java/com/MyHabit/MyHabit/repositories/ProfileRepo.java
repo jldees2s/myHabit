@@ -8,6 +8,8 @@ import java.util.Optional;
 
 @Repository
 public interface ProfileRepo extends CrudRepository<Profile, Integer> {
-    void deleteProfileById(int id);
-    Optional<Profile> findProfileById(int id); // optional in case no profile w given id
+
+  void deleteProfileById(int id);
+
+  Optional<Profile> findProfileById(int id); // optional in case no profile w given id
 }

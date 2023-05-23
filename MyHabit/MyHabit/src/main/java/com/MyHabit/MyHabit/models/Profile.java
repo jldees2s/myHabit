@@ -11,57 +11,58 @@ import java.util.List;
 @Entity
 public class Profile {
 
-    // FIELDS
-    @Id // primary key
-    @GeneratedValue
-    @Column(nullable = false, updatable = false) // cannot be changed once its set
-    private int id;
+  // FIELDS
+  @Id // primary key
+  @GeneratedValue
+  @Column(nullable = false, updatable = false) // cannot be changed once its set
+  private int id;
 
-    @NotBlank
-    @Size(min = 1, max = 35)
-    private String firstName;
+  @NotBlank
+  @Size(min = 1, max = 35)
+  private String firstName;
 
-    @NotBlank
-    @Size(min = 1, max = 35)
-    private String lastName;
+  @NotBlank
+  @Size(min = 1, max = 35)
+  private String lastName;
 
-    @NotBlank
-    @Size(min = 1, max = 35)
-    private String displayName; // the name a user wants to display on their profile, instead of their first and last names
+  @NotBlank
+  @Size(min = 1, max = 35)
+  private String displayName; // the name a user wants to display on their profile, instead of their first and last names
 
-    @NotBlank
-    @Email
-    private String email;
+  @NotBlank
+  @Email
+  private String email;
 
-    // optional fields
-    @Size(min = 1, max = 35)
-    private String location;
+  // optional fields
+  @Size(min = 1, max = 35)
+  private String location;
 
-    @Size(max = 150)
-    private String status;
+  @Size(max = 150)
+  private String status;
 
-    @Size(max = 500)
-    private String bio;
+  @Size(max = 500)
+  private String bio;
 
-    @URL
-    private String profileImageURL;
-
-
-    // TABLE RELATIONSHIPS
-    @OneToOne // one profile to one user, matched on userId
-    @JoinColumn(name = "id")
-    private Users user;
-
-    @OneToMany // one profile to many userhabits, matched on user_habit_id
-    @JoinColumn(name = "id")
-    private List<HabitSettings> habitSettings;
-
-    @OneToMany(mappedBy = "profile") // one user object to many habit objects
-    private List<Habit> habits;
+  @URL
+  private String profileImageURL;
 
 
-    // CONSTRUCTORS
-    public Profile() {}
+  // TABLE RELATIONSHIPS
+  @OneToOne // one profile to one user, matched on userId
+  @JoinColumn(name = "id")
+  private Users user;
+
+  @OneToMany // one profile to many userhabits, matched on user_habit_id
+  @JoinColumn(name = "id")
+  private List<HabitSettings> habitSettings;
+
+  @OneToMany(mappedBy = "profile") // one user object to many habit objects
+  private List<Habit> habits;
+
+
+  // CONSTRUCTORS
+  public Profile() {
+  }
 
   public Profile(String firstName, String lastName, String displayName, String email, String location, String status, String bio, String profileImageURL, Users user, List<HabitSettings> habitSettings, List<Habit> habits) {
     this.firstName = firstName;
@@ -175,17 +176,17 @@ public class Profile {
   }
 
   @Override
-    public String toString() {
-        return "Profile Information \n" +
-                "Profile Id: " + id +
-                "First Name: " + firstName + '\n' +
-                "Last Name: " + lastName + '\n' +
-                "Display Name: " + displayName + '\n' +
-                "Email: " + email + '\n' +
-                "Location: " + location + '\n' +
-                "Status: " + status + '\n' +
-                "Bio: " + bio + '\n' +
-                "Profile Image: " + profileImageURL + '\n' +
-                "Habits: " + habits + '\n';
-    }
+  public String toString() {
+    return "Profile Information \n" +
+      "Profile Id: " + id +
+      "First Name: " + firstName + '\n' +
+      "Last Name: " + lastName + '\n' +
+      "Display Name: " + displayName + '\n' +
+      "Email: " + email + '\n' +
+      "Location: " + location + '\n' +
+      "Status: " + status + '\n' +
+      "Bio: " + bio + '\n' +
+      "Profile Image: " + profileImageURL + '\n' +
+      "Habits: " + habits + '\n';
+  }
 }
