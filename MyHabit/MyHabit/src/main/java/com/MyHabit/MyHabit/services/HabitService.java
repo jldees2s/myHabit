@@ -28,6 +28,7 @@ public class HabitService {
   }
 
   // update existing habit
+  // TODO: FIGURE OUT UPDATE FUNCTION; currently identical to ADD function
   public Habit updateHabit(Habit habit, String name, String description) {
     habit.setName(name);
     habit.setDescription(description);

@@ -20,58 +20,65 @@ import java.util.Optional;
 @RequestMapping("/profile")
 public class ProfileController {
 
-    private final ProfileService profileService;
+  private final ProfileService profileService;
 
 //    @Autowired
 //    ProfileRepo profileRepo;
 
-    // CONSTRUCTORS
-    public ProfileController(ProfileService profileService) {
-        this.profileService = profileService;
-    }
+  // CONSTRUCTORS
+  public ProfileController(ProfileService profileService) {
+    this.profileService = profileService;
+  }
 
-    // METHODS
-    // view user's profile
-    @GetMapping("/{id}")
-    public ResponseEntity<Profile> displayUserProfile(@PathVariable("id") int profileId) {
-        Profile userProfile = profileService.findProfileById(profileId);
-        return new ResponseEntity<>(userProfile, HttpStatus.OK);
-    }
+  // METHODS
+  // view user's profile
+  @GetMapping("/{id}")
+  public ResponseEntity<Profile> displayUserProfile(@PathVariable("id") int profileId) {
+    Profile userProfile = profileService.findProfileById(profileId);
+    return new ResponseEntity<>(userProfile, HttpStatus.OK);
+  }
 
-    // add new profile
-    @PostMapping("/add")
-    public ResponseEntity<Profile> addProfile(@RequestBody Profile profile, String first, String last, String display, String email, String location, String pic, String status, String bio){
-        Profile newProfile = profileService.addProfile(profile, first, last, display, email, location, pic, status, bio);
-        return new ResponseEntity<>(newProfile, HttpStatus.OK);
-    }
+  // add new profile
+  @PostMapping("/add")
+  public ResponseEntity<Profile> addProfile(@RequestBody Profile profile, String first, String last, String display, String email, String location, String pic, String status, String bio) {
+    Profile newProfile = profileService.addProfile(profile, first, last, display, email, location, pic, status, bio);
+    return new ResponseEntity<>(newProfile, HttpStatus.CREATED);
+  }
 
-    // update profile information
-    @PostMapping("/update/profile")
-    public ResponseEntity<Profile> updateProfile(@RequestBody Profile profile, String first, String last, String display, String email, String location){
-        Profile updatedProfile = profileService.updateProfile(profile, first, last, display, email, location);
-        return new ResponseEntity<>(updatedProfile, HttpStatus.OK);
-    }
+  // update profile information
+  @PutMapping("/update/profile")
+  public ResponseEntity<Profile> updateProfile(@RequestBody Profile profile, String first, String last, String display, String email, String location) {
+    Profile updatedProfile = profileService.updateProfile(profile, first, last, display, email, location);
+    return new ResponseEntity<>(updatedProfile, HttpStatus.OK);
+  }
 
-    // update profile picture
-    @PostMapping("/update/picture")
-    public ResponseEntity<Profile> updatePicture(@RequestBody Profile profile, String pic){
-        Profile newPic = profileService.updateProfilePic(profile, pic);
-        return new ResponseEntity<>(newPic, HttpStatus.OK);
-    }
+  // update profile picture
+  @PutMapping("/update/picture")
+  public ResponseEntity<Profile> updatePicture(@RequestBody Profile profile, String pic) {
+    Profile newPic = profileService.updateProfilePic(profile, pic);
+    return new ResponseEntity<>(newPic, HttpStatus.OK);
+  }
 
-    // update profile status
-    @PostMapping("/update/status")
-    public ResponseEntity<Profile> updateStatus(@RequestBody Profile profile, String status){
-        Profile newStatus = profileService.updateStatus(profile, status);
-        return new ResponseEntity<>(newStatus, HttpStatus.OK);
-    }
+  // update profile status
+  @PutMapping("/update/status")
+  public ResponseEntity<Profile> updateStatus(@RequestBody Profile profile, String status) {
+    Profile newStatus = profileService.updateStatus(profile, status);
+    return new ResponseEntity<>(newStatus, HttpStatus.OK);
+  }
 
-    // update profile bio
-    @PostMapping("/update/bio")
-    public ResponseEntity<Profile> updateBio(@RequestBody Profile profile, String bio){
-        Profile newBio = profileService.updateBio(profile, bio);
-        return new ResponseEntity<>(newBio, HttpStatus.OK);
-    }
+  // update profile bio
+  @PutMapping("/update/bio")
+  public ResponseEntity<Profile> updateBio(@RequestBody Profile profile, String bio) {
+    Profile newBio = profileService.updateBio(profile, bio);
+    return new ResponseEntity<>(newBio, HttpStatus.OK);
+  }
+
+  // delete user profile
+  @DeleteMapping("delete/{id}")
+  public ResponseEntity<?> deleteProfile(@PathVariable("id") int profileId) {
+    profileService.deleteProfile(profileId);
+    return new ResponseEntity<>(HttpStatus.OK);
+  }
 
 
 //    // view user's profile

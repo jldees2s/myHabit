@@ -28,11 +28,17 @@ public class HabitSettingsService {
   }
 
   // update existing habit settings
+  // TODO: FIGURE OUT UPDATE FUNCTION; currently identical to ADD function
   public HabitSettings updateHabitSettings(HabitSettings habitSettings, boolean active, boolean complete, boolean hidden) {
     habitSettings.setActive(active);
     habitSettings.setComplete(complete);
     habitSettings.setHidden(hidden);
     return userHabitRepo.save(habitSettings);
+  }
+
+  // find all habit settings
+  public Iterable<HabitSettings> findAllHabitSettings(){
+    return userHabitRepo.findAll();
   }
 
   // find habit settings by id
@@ -44,4 +50,5 @@ public class HabitSettingsService {
   public void deleteHabitSettings(int id) {
     userHabitRepo.deleteHabitSettingsById(id);
   }
+
 }

@@ -33,6 +33,7 @@ public class ProfileService {
     }
 
     // update existing profile (personal information ONLY)
+    // TODO: FIGURE OUT UPDATE FUNCTION; currently identical to ADD function
     public Profile updateProfile(Profile profile, String first, String last, String display, String email, String location){
         profile.setFirstName(first);
         profile.setLastName(last);
@@ -43,18 +44,21 @@ public class ProfileService {
     }
 
     // update profile picture
+    // TODO: FIGURE OUT UPDATE FUNCTION
     public Profile updateProfilePic(Profile profile, String pic){
         profile.setProfileImageURL(pic);
         return profileRepo.save(profile);
     }
 
     // update status
+    // TODO: FIGURE OUT UPDATE FUNCTION
     public Profile updateStatus(Profile profile, String status){
         profile.setStatus(status);
         return profileRepo.save(profile);
     }
 
     // update bio
+    // TODO: FIGURE OUT UPDATE FUNCTION
     public Profile updateBio(Profile profile, String bio){
         profile.setBio(bio);
         return profileRepo.save(profile);
