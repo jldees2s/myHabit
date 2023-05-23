@@ -10,9 +10,15 @@ import { FormsModule } from '@angular/forms';
 import { TimelineComponent } from './timeline/timeline.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
-const routes: Routes = [
-  {path:"login", component: UserloginComponent}]
+import { RegistrationComponent } from './registration/registration.component';
+import { ProfileComponent } from './profile/profile.component';
 
+const routes: Routes = [
+  {path:"login", component: UserloginComponent},
+  {path:"profile", component: ProfileComponent},
+  {path:"registration", component: RegistrationComponent}
+
+]
 
 @NgModule({
   declarations: [
@@ -20,6 +26,7 @@ const routes: Routes = [
     UserloginComponent,
     NavbarComponent,
     TimelineComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +38,7 @@ const routes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
-  
+export class AppModule {
+
 }
 

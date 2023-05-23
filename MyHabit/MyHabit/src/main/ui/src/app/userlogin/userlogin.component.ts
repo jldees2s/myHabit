@@ -31,6 +31,8 @@ export class UserloginComponent implements OnInit {
       console.log("test")
       console.log(res)
       if(res.id !== 0){
+        localStorage.setItem('authToken', res.id)
+        console.log(localStorage.authToken)
          this.router.navigate(["home"])
       }
     }),
