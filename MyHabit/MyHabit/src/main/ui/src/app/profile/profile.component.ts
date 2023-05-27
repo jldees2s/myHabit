@@ -9,19 +9,18 @@ import { profile } from './profile'
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-//   public profileFound? : profile
+  public userProfile!: profile
   constructor(private http: HttpClient,
     private router: Router) { }
 
 ngOnInit(): void {
-    let userId = 101;
-    let url = `http://localhost:8080/profile/${userId}`
-    this.http.get<any>(url).subscribe(res =>{
-      console.log("test")
-      console.log(res)
-//       if(res.id !== 0){
-//          this.router.navigate(["home"])
-//       }
-  })
-}
-}
+if(!localStorage.authToken){
+        this.router.navigate(["/registration"])
+        } else {
+        let url = `http://localhost:8080/profile/${localStorage.authToken}`
+        this.http.get<any>(url).subscribe(res =>{
+        this.userProfile = res;
+        })
+      }
+    }
+  }
