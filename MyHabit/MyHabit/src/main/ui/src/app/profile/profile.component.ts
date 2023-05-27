@@ -8,6 +8,7 @@ import { profile } from './profile'
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
+
 export class ProfileComponent implements OnInit {
   public userProfile!: profile
   constructor(private http: HttpClient,
@@ -15,9 +16,9 @@ export class ProfileComponent implements OnInit {
 
 ngOnInit(): void {
 if(!localStorage.authToken){
-        this.router.navigate(["/registration"])
+        this.router.navigate(['/registration'])
         } else {
-        let url = `http://localhost:8080/profile/${localStorage.authToken}`
+        let url = 'http://localhost:8080/profile/${localStorage.authToken}'
         this.http.get<any>(url).subscribe(res =>{
         this.userProfile = res;
         })
