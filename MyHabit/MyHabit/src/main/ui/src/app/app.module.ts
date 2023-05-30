@@ -14,6 +14,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 
 const routes: Routes = [
   {path:"", component: HomepageComponent},
+  {path:" ", component: HomepageComponent},
   {path:"login", component: UserloginComponent},
   {path:"registration", component: RegistrationComponent},
   {path:"homepage", component: HomepageComponent}
@@ -39,7 +40,7 @@ const routes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
-  
+export class AppModule {
+
 }
 
