@@ -19,6 +19,7 @@ font-size: 9pt;
 ul li {
 padding-right: 10px;
 line-height: 1.6;
+font-size: 9pt;
 }
 
 h3 {
@@ -35,19 +36,6 @@ h5 {
 padding: 5px 20px;
 margin: 0;
 }
-
-/* div#sidebar {
-background: #7cb71c;
-border-style: solid;
-border-color: black;
-} */
-/* 
-div#photobox li {
-list-style: none;
-background: white;
-margin-top: 10px;
-border: 2px solid #792121;
-} */
 
 div#extra {
 background: white;
@@ -70,6 +58,13 @@ float: right;
 width: 95%;
 margin-left: -200px;
 }
+
+div#wrapper2 {
+    float: right;
+    width: 95%;
+    margin-left: -200px;
+    padding-top: 10px;
+    }
 
 div#content {
 margin-left: 200px;
@@ -108,32 +103,45 @@ border-radius: 40px;
 padding-left: 10px;
 }
 
-.container {
-max-width: 680px;
-margin-top: 20px;
+/*---------------online bug---------------*/
+.icon-container {
+    width: 195px;
+    height: 195px;
+    position: relative;
+    padding: 10px;
+}
+  
+img {
+    height: 92%;
+    width: 92%;
+    border-radius: 50%;
+}
+  
+.online-circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: green;
+    border: 2px solid white;
+    bottom: 10%;
+    right: 70%;
+    position: absolute;
 }
 
-.container2 {
-max-width: 680px;
-margin-top: 20px;
-}
+/*---------------status box---------------*/
 
-.padding
-{
-width:175px;
-height:175px;
-margin: 10px;
+.statuscontainer {
+max-width: 850px;
+padding: 20px;
 }
 
 .button-group {
-margin-bottom: 20px;
+margin-bottom: 0px;
 }
 
 .posts {
 clear: both;
 list-style: none;
-padding-left: 0;
-width: 100%;
 }
 
 .posts li {
@@ -142,7 +150,6 @@ border: 1px solid #d8d8d8;
 padding-top: 10px;
 padding-left: 20px;
 padding-right: 0px;
-padding-bottom: 10px;
 margin-bottom: 10px;
 word-wrap: break-word;
 min-height: 42px;

@@ -18,7 +18,7 @@ ngOnInit(): void {
 if(!localStorage.authToken){
         this.router.navigate(['/registration'])
         } else {
-        let url = 'http://localhost:8080/profile/${localStorage.authToken}'
+        let url = `http://localhost:8080/profile/${localStorage.authToken}`
         this.http.get<any>(url).subscribe(res =>{
         this.userProfile = res;
         })

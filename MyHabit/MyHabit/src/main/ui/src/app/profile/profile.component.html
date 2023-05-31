@@ -1,35 +1,56 @@
 <!DOCTYPE HTML>
 <html lang="en">
+  
 <head>
   <title>myhabit | a place for good habits</title>
   <link rel="stylesheet" href="profile.component.css"/>
 </head>
+
 <body>
 <div id="container">
   <div id="container">
     <div id="header">
-    </div>
+
     <div id="wrapper">
         <div id="content">
-            <h3>habit ui</h3>
-            <p><strong>Habits</strong></p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-              molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-              numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-              optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
-              obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
-              nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
-              tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
-              quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos.</p>
+        <br>
+        <h3>habit ui</h3>
+        <p><strong>Habits</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+        molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+        numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+        optio, eaque rerum.</p>
         </div>
     </div>
+
+    <div id="container">
+      <div id="container">
+        <div id="header">
+
+        <div id="wrapper2">
+            <div id="content">
+            <br>
+            <h3>other stuff</h3>
+            <p><strong>more things</strong></p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+            optio, eaque rerum.</p>
+            </div>
+        </div>
   
   <div id="photobox">
-    <h3>Name</h3>
-    <div> <img src="images/photoplaceholder.jpeg" class="padding" alt="profilephoto" height="175"></div>
-    <h5>St. Louis, MO</h5>
-    <p>Status</p>
+    <h3>{{userProfile.firstName}}</h3>
+    <div>
+    <div class='icon-container'>
+      <div class='online-circle'></div>
+      <img src="images/photoplaceholder.jpeg"></div>
+    </div>
+    <h5>{{userProfile.location}}</h5>
+    <p>{{userProfile.status}}</p>
+    </div>
   </div>
+
   <div id="extra">
     <p><strong>Additional Stuff</strong></p>
     <p>interests</p>
@@ -41,6 +62,9 @@
   </div>
   <div id="footer"><p>This is not affiliated with the original MySpace.</p></div>
   </div>
+</div>
+</div>
+</div>
 </div>
 </body>
 </html>
