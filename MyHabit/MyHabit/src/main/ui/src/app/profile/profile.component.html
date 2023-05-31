@@ -7,15 +7,37 @@
 </head>
 
 <body>
+  <audio src="music/NoScrubs.mp3" autoplay="autoplay"></audio>
 <div id="container">
   <div id="container">
     <div id="header">
 
     <div id="wrapper">
         <div id="content">
+          <link href="https://s3.amazonaws.com/codecademy-content/courses/ltp2/css/bootstrap.min.css" rel="stylesheet">
+          <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+          <div class="statuscontainer">
+            <form>
+              <div class="form-group">
+                <textarea class="form-control status-box" rows="2" placeholder="What's on your mind?"></textarea>
+              </div>
+            </form>
+            <div class="button-group pull-right">
+              <a href="#" class="btn btn-primary">Post</a>
+            </div>
+          
+            <ul class="posts">
+            </ul>
+          </div>
+      
+          <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+          <script src="app.js"></script>
+  
         <br>
         <h3>habit ui</h3>
         <p><strong>Habits</strong></p>
+        
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
         molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
         numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
@@ -29,7 +51,6 @@
 
         <div id="wrapper2">
             <div id="content">
-            <br>
             <h3>other stuff</h3>
             <p><strong>more things</strong></p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,

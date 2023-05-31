@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 import { RegistrationComponent } from './registration/registration.component';
 import { ProfileComponent } from './profile/profile.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   {path:"login", component: UserloginComponent},
@@ -33,7 +34,8 @@ const routes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
