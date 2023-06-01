@@ -15,9 +15,6 @@ public class UserController {
 
   private final UserService userService;
 
-//    @Autowired
-//    ProfileRepo profileRepo;
-
   // CONSTRUCTORS
   public UserController(UserService userService) {
     this.userService = userService;
@@ -31,7 +28,7 @@ public class UserController {
     return new ResponseEntity<>(user, HttpStatus.OK);
   }
 
-  // POTENTIAL BUTTONS
+  // (POTENTIAL BUTTONS)
   // update profile information
   @PutMapping("/update/profile")
   public ResponseEntity<Users> updateProfile(@RequestBody Users user, String first, String last, String display, String email, String location) {

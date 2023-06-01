@@ -13,6 +13,7 @@ import java.util.List;
 @Entity
 public class Users {
 
+  // FIELDS
   @Id
   @GeneratedValue
   private int id;
@@ -59,11 +60,7 @@ public class Users {
   @JoinColumn(name = "id")
   private List<HabitSettings> habitSettings;
 
-//  // connection to user's profile table
-//  @OneToOne // one user to one profile
-//  private Profile profile;
-
-
+  // CONSTRUCTORS
   public Users() {
   }
 
@@ -80,6 +77,7 @@ public class Users {
     this.profileImageURL = profileImageURL;
   }
 
+  // METHODS, GETTERS & SETTERS
   public boolean isMatchingPassword(String password) {
     return encoder.matches(password, passwordHash);
   }
