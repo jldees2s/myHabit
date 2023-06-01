@@ -26,21 +26,20 @@ public class Habit {
   @JoinColumn(name = "id")
   private HabitSettings habitSettings;
 
-  @ManyToOne // many habits to one profile
-  @JoinColumn(name = "profile_id")
-  private Profile profile;
+//  @ManyToOne // many habits to one profile
+//  @JoinColumn(name = "profile_id")
+//  private Profile profile;
 
 
   // CONSTRUCTORS
   public Habit() {
   }
 
-  public Habit(String name, String description, Users user, HabitSettings habitSettings, Profile profile) {
+  public Habit(String name, String description, Users user, HabitSettings habitSettings) {
     this.name = name;
     this.description = description;
     this.user = user;
     this.habitSettings = habitSettings;
-    this.profile = profile;
   }
 
   // GETTERS & SETTERS
@@ -80,14 +79,6 @@ public class Habit {
     this.habitSettings = habitSettings;
   }
 
-  public Profile getProfile() {
-    return profile;
-  }
-
-  public void setProfile(Profile profile) {
-    this.profile = profile;
-  }
-
   @Override
   public String toString() {
     return "Habit" +
@@ -95,7 +86,6 @@ public class Habit {
       "Name: " + name + '\n' +
       "Description: " + description + '\n' +
       "User Id: " + user + '\n' +
-      "Associated User Profile Id: " + profile + '\n' +
       "User's Habit Settings: " + habitSettings + '\n';
   }
 }
