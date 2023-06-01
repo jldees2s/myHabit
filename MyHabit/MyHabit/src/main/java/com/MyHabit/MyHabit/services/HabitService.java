@@ -27,8 +27,7 @@ public class HabitService {
     return habitRepo.save(habit);
   }
 
-  // update existing habit
-  // TODO: FIGURE OUT UPDATE FUNCTION; currently identical to ADD function
+  // update existing habit - needs @PutMapping
   public Habit updateHabit(Habit habit, String name, String description) {
     habit.setName(name);
     habit.setDescription(description);
