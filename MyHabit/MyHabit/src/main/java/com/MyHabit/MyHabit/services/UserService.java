@@ -62,7 +62,7 @@ public class UserService {
 
   // find profile by id
   public Users findUserById(int id) {
-    return userRepo.findUsersById(id).orElseThrow(() -> new UserNotFoundException("No Profile Found for Profile ID" + id));
+    return userRepo.findUsersById(id).orElseThrow(() -> new UserNotFoundException("No Profile Found for UserID " + id));
   }
 
   // delete profile
