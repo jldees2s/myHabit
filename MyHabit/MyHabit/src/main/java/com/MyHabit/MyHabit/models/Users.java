@@ -184,4 +184,20 @@ public class Users {
   public void setHabitSettings(List<HabitSettings> habitSettings) {
     this.habitSettings = habitSettings;
   }
+
+  //  @Override
+//  public String toString() {
+//    return "Profile Information \n" +
+//      "Profile Id: " + id +
+//      "First Name: " + firstName + '\n' +
+//      "Last Name: " + lastName + '\n' +
+//      "Display Name: " + displayName + '\n' +
+//      "Email: " + email + '\n' +
+//      "Location: " + location + '\n' +
+//      "Status: " + status + '\n' +
+//      "Bio: " + bio + '\n' +
+//      "Profile Image: " + profileImageURL + '\n' +
+//      "Habits: " + habits + '\n';
+//  }
+
 }
