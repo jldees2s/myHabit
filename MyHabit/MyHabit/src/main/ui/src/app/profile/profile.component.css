@@ -36,44 +36,55 @@ padding: 5px 20px;
 margin: 0;
 }
 
+body {
+background-size:cover; 
+height: auto;
+background-repeat: no-repeat;
+background-position: center center;
+}
+
 div#entirepage-container {
-border: 2px solid pink;
+border: 2px solid none;
 }
 
 div#content-container {
 margin: 90px;
-border: 3px solid aqua;
 }
 
 div#habits-container {
-border: 2px solid green;
+border: 2px solid #D8D8D8;
+background-color: rgb(255, 255, 255, .75);
 }
 
 div#container2 {
-border: 2px solid green;
+border: 2px solid none;;
 }
 
 div#extra {
-border: 2px solid coral;
+border: 2px solid #D8D8D8;
+background-color: rgb(255, 255, 255, .75);
+margin-top: 20px;
 width: 23%;
 }
 
 div#habit-statuswrapper {
 float: right;
 width: 75%;
-border: 3px solid rebeccapurple;
+border: 2px solid none;
 }
 
 div#wrapper2 {
 float: right;
 width: 75%;
-padding-top: 20px;
-border: 1px solid yellowgreen;
+margin-top: 20px;
+border: 2px solid #D8D8D8;
+background-color: rgb(255, 255, 255, .75);
 }
 
 div#photobox {
 width: 23%;
-border: 2px solid magenta;
+border: 2px solid #D8D8D8;
+background-color: rgb(255, 255, 255, .75);
 }
 
 div#footer {
@@ -83,7 +94,7 @@ width: 100%;
 }
 
 div#footer {
-background: white;
+border: 2px solid none;
 color: black;
 }
 
@@ -126,9 +137,10 @@ position: absolute;
 
 .statuscontainer {
 max-width: 850px;
-padding-top: 20px;
-padding-left: 20px;
-padding-right: 20px;
+padding: 20px;
+margin-bottom: 20px;
+border: 2px solid #D8D8D8;
+background-color: rgb(255, 255, 255, .75);
 }
 
 .button-group {
