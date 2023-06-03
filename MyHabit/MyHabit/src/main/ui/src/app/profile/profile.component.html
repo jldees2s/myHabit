@@ -7,12 +7,12 @@
 </head>
 
 <body>
-  <audio src="music/NoScrubs.mp3" autoplay="autoplay"></audio>
-<div id="container">
-  <div id="container">
+  <!-- <audio src="music/NoScrubs.mp3" autoplay="autoplay"></audio> -->
+<div id="entirepage-container">
+  <div id="content-container">
     <div id="header">
 
-    <div id="wrapper">
+    <div id="habit-statuswrapper">
         <div id="content">
           <link href="https://s3.amazonaws.com/codecademy-content/courses/ltp2/css/bootstrap.min.css" rel="stylesheet">
           <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -23,7 +23,7 @@
                 <textarea class="form-control status-box" rows="2" placeholder="What's on your mind?"></textarea>
               </div>
             </form>
-            <div class="button-group pull-right">
+            <div class="button-group pull-left">
               <a href="#" class="btn btn-primary">Post</a>
             </div>
           
@@ -33,23 +33,19 @@
       
           <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
           <script src="app.js"></script>
-  
-        <br>
+    
+        <div id="habits-container">
         <h3>habit ui</h3>
         <p><strong>Habits</strong></p>
-        
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
         molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
         numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
         optio, eaque rerum.</p>
         </div>
+        </div>
     </div>
 
-    <div id="container">
-      <div id="container">
-        <div id="header">
-
-        <div id="wrapper2">
+     <div id="wrapper2">
             <div id="content">
             <h3>other stuff</h3>
             <p><strong>more things</strong></p>
@@ -60,8 +56,8 @@
             </div>
         </div>
   
-  <div id="photobox">
-    <h3>{{userProfile.firstName}}</h3>
+    <div id="photobox">
+    <h4>{{userProfile.firstName}}</h4>
     <div>
     <div class='icon-container'>
       <div class='online-circle'></div>
@@ -70,7 +66,6 @@
     <h5>{{userProfile.location}}</h5>
     <p>{{userProfile.status}}</p>
     </div>
-  </div>
 
   <div id="extra">
     <p><strong>Additional Stuff</strong></p>
@@ -81,10 +76,9 @@
       <li>art</li>
     </ul>
   </div>
+
   <div id="footer"><p>This is not affiliated with the original MySpace.</p></div>
-  </div>
-</div>
-</div>
+  
 </div>
 </div>
 </body>
