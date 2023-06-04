@@ -17,7 +17,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 const routes: Routes = [
   {path:"login", component: UserloginComponent},
   {path:"profile", component: ProfileComponent},
-  {path:"registration", component: RegistrationComponent}
+  { path: "registration", component: RegistrationComponent },
+  {path: "timeline", component: TimelineComponent},
 
 ]
 
