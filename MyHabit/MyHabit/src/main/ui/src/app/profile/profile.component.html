@@ -1,65 +1,89 @@
-<!-- <!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html lang="en">
-
+<app-navbar></app-navbar>
 <head>
   <title>myhabit | a place for good habits</title>
   <link rel="stylesheet" href="profile.component.css"/>
 </head>
 
 <body>
-<div id="container">
-  <div id="header">
-    <h1><img src="images/myhabitlogos-white-01.png" alt="myhabit" height="70" margin="20"></h1>
-    <a href="/" target="_blank">home |  my profile  |  friends  |  messages</a>
-  </div>
-  <div id="wrapper">
-    <div id="content">
-      <link href="https://s3.amazonaws.com/codecademy-content/courses/ltp2/css/bootstrap.min.css" rel="stylesheet">
-      <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-      <link href="style.css" rel="stylesheet">
-      </head>
-      <body>
-      <div class="container">
-        <form>
-          <div class="form-group">
-            <textarea class="form-control status-box" rows="3" placeholder="What's on your mind?"></textarea>
+<style>
+body {background-image: url('images/backgroundimg.jpeg');}
+</style>
+<!-- <audio src="music/NoScrubs.mp3" autoplay="autoplay"></audio> -->
+<div id="entirepage-container">
+  <div id="content-container">
+    <div id="header">
+
+    <div id="habit-statuswrapper">
+        <div id="content">
+          <link href="https://s3.amazonaws.com/codecademy-content/courses/ltp2/css/bootstrap.min.css" rel="stylesheet">
+          <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+          <div class="statuscontainer">
+            <form>
+              <div class="form-group">
+                <textarea class="form-control status-box" rows="2" placeholder="What's on your mind?"></textarea>
+              </div>
+            </form>
+            <div class="button-group pull-left">
+              <a href="#" class="btn btn-primary">Post</a>
+            </div>
+
+            <ul class="posts">
+            </ul>
           </div>
-        </form>
-        <div class="button-group pull-right">
-          <a href="#" class="btn btn-primary">Post</a>
+
+          <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+          <script src="app.js"></script>
+
+        <div id="habits-container">
+        <h3>habit ui</h3>
+        <p><strong>Habits</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+        molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+        numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+        optio, eaque rerum.</p>
+        </div>
+        </div>
+    </div>
+
+     <div id="wrapper2">
+            <div id="content">
+            <h3>other stuff</h3>
+            <p><strong>more things</strong></p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+            optio, eaque rerum.</p>
+            </div>
         </div>
 
-        <ul class="posts">
-        </ul>
-      </div>
-
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-      <script src="app.js"></script>
-      <p><strong>Habits Here</strong></p>
-      <h3>About User's habits</h3>
-      <p>User loves to read 75 chapters a day and do meditation</p>
-      <h3>Bio Here</h3>
-      <p>User loves myhabit and catz.</p>
+    <div id="photobox">
+    <h4>{{userProfile.firstName}}</h4>
+    <div>
+    <div class='icon-container'>
+      <div class='online-circle'></div>
+      <img src="images/photoplaceholder.jpeg"></div>
     </div>
-  </div>
-  <div id="navigation">
-    <h3>Name</h3>
-    <div> <img src="images/photoplaceholder.jpeg" class="padding" alt="profilephoto" height="175"></div>
-    <h5>St. Louis, MO</h5>
-    <p>Status</p>
-  </div>
+    <h5>{{userProfile.location}}</h5>
+    <p>{{userProfile.status}}</p>
+    </div>
+
   <div id="extra">
     <p><strong>Additional Stuff</strong></p>
-    <p>add other features</p>
+    <p>interests</p>
     <ul>
-      <li>stuff</li>
-      <li>stuff</li>
-      <li>stuff</li>
-      <li>stuff</li>
+      <li>reading</li>
+      <li>music</li>
+      <li>art</li>
     </ul>
   </div>
-  <div id="footer"><p>This is not affiliated with the original MySpace.</p>
-  </div>
+
+  <div id="footer"><p>This is not affiliated with the original MySpace.</p></div>
+
+</div>
+</div>
 </div>
 </body>
-</html> -->
+</html>
