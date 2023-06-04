@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
+// import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,12 +13,18 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 import { RegistrationComponent } from './registration/registration.component';
 import { ProfileComponent } from './profile/profile.component';
+import { HomepageComponent } from './homepage/homepage.component';
+
 
 const routes: Routes = [
+  {path:"", component: HomepageComponent},
+  {path:" ", component: HomepageComponent},
   {path:"login", component: UserloginComponent},
   {path:"profile", component: ProfileComponent},
   { path: "registration", component: RegistrationComponent },
   {path: "timeline", component: TimelineComponent},
+  {path:"registration", component: RegistrationComponent},
+  {path:"homepage", component: HomepageComponent}
 
 ]
 
@@ -27,9 +34,11 @@ const routes: Routes = [
     UserloginComponent,
     NavbarComponent,
     TimelineComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    HomepageComponent
   ],
   imports: [
+    // FlexLayoutModule,
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
