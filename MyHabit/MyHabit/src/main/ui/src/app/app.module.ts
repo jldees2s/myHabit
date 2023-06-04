@@ -28,6 +28,7 @@ const routes: Routes = [
     UserloginComponent,
     RegistrationComponent,
     HomepageComponent,
+    
   ],
   imports: [
     // FlexLayoutModule,
