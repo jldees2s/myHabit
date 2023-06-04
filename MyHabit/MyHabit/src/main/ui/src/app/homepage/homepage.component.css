@@ -26,3 +26,37 @@ img{
   padding: 20px;
   
 }
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  /* border: 2px solid red; */
+}
+
+span {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.links a {
+  text-decoration: none;
+}
