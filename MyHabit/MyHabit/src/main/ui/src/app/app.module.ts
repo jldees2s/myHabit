@@ -9,6 +9,7 @@ import { HttpClientModule, HttpClient} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { TimelineComponent } from './timeline/timeline.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { RegistrationComponent } from './registration/registration.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -34,6 +35,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatSlideToggleModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
     FormsModule,
@@ -45,4 +47,3 @@ const routes: Routes = [
 export class AppModule {
 
 }
-
