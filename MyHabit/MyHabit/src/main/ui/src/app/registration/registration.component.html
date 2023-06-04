@@ -1,3 +1,5 @@
+<app-navbar></app-navbar>
+
 <body>
 
 <form action="action_page.php">
@@ -6,14 +8,14 @@
     <p>Please fill in this form to create an account.</p>
     <hr>
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+    <label for="username"><b>username</b></label>
+    <input type="text" placeholder="Username" name="userName" [(ngModel)] = "model.userName" id="username" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+    <input type="password" placeholder="Enter Password" name="password" [(ngModel)] = "model.password" id="psw" required>
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+    <input type="password" placeholder="Repeat Password" name="secondPassword" [(ngModel)] = "model.secondPassword" id="secondPassword" required>
     <hr>
 
     
