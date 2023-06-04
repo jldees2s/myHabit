@@ -28,7 +28,8 @@ const routes: Routes = [
     UserloginComponent,
     NavbarComponent,
     TimelineComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
