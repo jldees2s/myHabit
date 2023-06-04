@@ -8,6 +8,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -59,6 +60,8 @@ public class Users {
   @OneToMany // one user to many habit settings objects
   @JoinColumn(name = "id")
   private List<HabitSettings> habitSettings;
+
+  private Integer[] followerList;
 
   // CONSTRUCTORS
   public Users() {
@@ -181,6 +184,17 @@ public class Users {
 
   public void setHabitSettings(List<HabitSettings> habitSettings) {
     this.habitSettings = habitSettings;
+  }
+
+  public Integer[] getFollowerList(){
+    return this.followerList;
+  }
+
+  public void addFollower(int followerId){
+    int endArray = followerList.length + 1;
+    followerList[endArray] = followerId;
+
+
   }
 
   @Override
