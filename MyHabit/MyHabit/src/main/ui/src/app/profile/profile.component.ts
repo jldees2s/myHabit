@@ -26,10 +26,28 @@ if(!localStorage.authToken){
     }
   }
 
-const habits = document.querySelectorAll('habit');
 
+//Query Selectors  
+const habits = document.querySelectorAll('.habit');
+const themeBtn = document.querySelector('#modal');
+
+//functions
+const storage = {
+
+}
+
+const ui = {
+  theme() {
+    // themeBtn.classList.toggle('dark');
+    // const root = document.querySelector(':root');
+    // root.classList.toggle('dark');
+  }
+}
+
+//delete
 habits.forEach(habit => {
   habit.addEventListener('click', () => {
     console.log('clicked');
+    // habit.classList.toggle('completed');
   })
 })
