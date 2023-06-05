@@ -15,6 +15,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RegistrationComponent } from './registration/registration.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HomepageComponent } from './homepage/homepage.component';
 
 const routes: Routes = [
   {path:"", component: HomepageComponent},
@@ -34,7 +35,8 @@ const routes: Routes = [
     NavbarComponent,
     TimelineComponent,
     RegistrationComponent,
-    HomepageComponent
+    HomepageComponent,
+    ProfileComponent
   ],
   imports: [
     // FlexLayoutModule,
