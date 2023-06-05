@@ -8,8 +8,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Entity
 public class Users {
@@ -61,7 +61,10 @@ public class Users {
   @JoinColumn(name = "id")
   private List<HabitSettings> habitSettings;
 
-  private Integer[] followerList;
+//  @ManyToOne
+//  @JoinTable(name = "id")
+//  private Followers followers;
+
 
   // CONSTRUCTORS
   public Users() {
@@ -185,19 +188,7 @@ public class Users {
   public void setHabitSettings(List<HabitSettings> habitSettings) {
     this.habitSettings = habitSettings;
   }
-
-  public Integer[] getFollowerList(){
-    return this.followerList;
-  }
-
-  public void addFollower(int followerId){
-    int endArray = followerList.length + 1;
-    followerList[endArray] = followerId;
-
-
-  }
-
-  @Override
+    @Override
   public String toString() {
     return "User Information \n" +
       "User Id: " + id + '\n' +
