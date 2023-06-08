@@ -44,6 +44,12 @@ const ui = {
   }
 }
 
+function addHabit(){
+  let container: HTMLCollectionOf<Element> = document.getElementsByClassName(".modal-container");
+    
+  }
+    
+
 //delete
 habits.forEach(habit => {
   habit.addEventListener('click', () => {

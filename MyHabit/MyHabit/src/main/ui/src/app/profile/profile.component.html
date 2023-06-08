@@ -119,14 +119,14 @@ body {background-image: url('images/backgroundimg.jpeg');}
             </div>
         </section>
         <section class="new-habit">
-          <button class="new-habit_add" id="modal">
+          <button class="new-habit_add" id="modal" onClick="addHabit()">
             <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 5.75V18.25"></path>
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.25 12L5.75 12"></path>
             </svg>      
           </button>
         </section>
-        <div class="modal-container" aria-hidden="true">
+        <div class="modal-container">
             <!-- <div class="modal"> /* line 181 close */ -->
             <h2>Add a new habit</h2>
             <input type="text" id="title" placeholder="Enter a habit name">
