@@ -59,9 +59,9 @@ public class Users {
   @JoinColumn(name = "id")
   private List<HabitSettings> habitSettings;
 
-  @ManyToOne
+  @ManyToMany
   @JoinColumn(name = "followerList")
-  private Followers followers;
+  private List<Followers> followers;
 
 
   // CONSTRUCTORS

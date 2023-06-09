@@ -10,10 +10,8 @@ public class Followers {
   @GeneratedValue
   private int id;
 
-  //private Integer[] followerList;
-
-  //would a many to many fix the issue of only 1 follower?
-  @OneToMany
+  //many users to many followlists
+  @ManyToMany
   @JoinColumn(name = "followerList")
   private List<Users> usersList;
 
@@ -27,8 +25,6 @@ public class Followers {
   public List<Users> getFollowerList() {
     return usersList;
   }
-
-  //see about storing a json list
   public void addFollower(Users follower){
    usersList.add(follower);
     return;
