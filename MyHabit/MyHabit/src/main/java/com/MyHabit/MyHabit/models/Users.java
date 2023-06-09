@@ -9,6 +9,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
+import java.util.Optional;
 
 @Entity
 public class Users {
@@ -24,6 +25,7 @@ public class Users {
   private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
   // merged profile fields
+
   @Size(min = 1, max = 35)
   private String firstName;
 
@@ -56,6 +58,11 @@ public class Users {
   @OneToMany // one user to many habit settings objects
   @JoinColumn(name = "id")
   private List<HabitSettings> habitSettings;
+
+  @ManyToMany
+  @JoinColumn(name = "followerList")
+  private List<Followers> followers;
+
 
   // CONSTRUCTORS
   public Users() {
@@ -179,8 +186,7 @@ public class Users {
   public void setHabitSettings(List<HabitSettings> habitSettings) {
     this.habitSettings = habitSettings;
   }
-
-  @Override
+    @Override
   public String toString() {
     return "User Information \n" +
       "User Id: " + id + '\n' +
