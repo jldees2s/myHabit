@@ -1,9 +1,7 @@
 package com.MyHabit.MyHabit.models;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Entity
 public class Followers {
@@ -12,20 +10,37 @@ public class Followers {
   @GeneratedValue
   private int id;
 
-  private ArrayList<Optional<Users>> followerList;
+  //private Integer[] followerList;
 
-//  @OneToMany
-//  @JoinTable(name = "id")
-//  private Users users;
+  //would a many to many fix the issue of only 1 follower?
+  @OneToMany
+  @JoinColumn(name = "followerList")
+  private List<Users> usersList;
 
-  public Followers(){}
 
-  public ArrayList<Optional<Users>> getFollowerList() {
-    return followerList;
+  private int userId;
+
+  public Followers(){
+    this.usersList = new ArrayList<>();
   }
 
-  public void addFollower(Optional<Users> follower){
-    followerList.add(follower);
+  public List<Users> getFollowerList() {
+    return usersList;
   }
 
+  //see about storing a json list
+  public void addFollower(Users follower){
+   usersList.add(follower);
+    return;
+  }
+
+  public int getId(){return id;}
+
+  public int getUserId() {
+    return userId;
+  }
+
+  public void setUserId(int userId) {
+    this.userId = userId;
+  }
 }

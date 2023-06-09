@@ -25,15 +25,13 @@ public class Users {
   private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
   // merged profile fields
-  @NotBlank
+
   @Size(min = 1, max = 35)
   private String firstName;
 
-  @NotBlank
   @Size(min = 1, max = 35)
   private String lastName;
 
-  @NotBlank
   @Email
   private String email;
 
@@ -61,9 +59,9 @@ public class Users {
   @JoinColumn(name = "id")
   private List<HabitSettings> habitSettings;
 
-//  @ManyToOne
-//  @JoinTable(name = "id")
-//  private Followers followers;
+  @ManyToOne
+  @JoinColumn(name = "followerList")
+  private Followers followers;
 
 
   // CONSTRUCTORS

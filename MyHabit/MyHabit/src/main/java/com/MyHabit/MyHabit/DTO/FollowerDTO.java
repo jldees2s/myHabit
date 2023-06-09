@@ -2,16 +2,17 @@ package com.MyHabit.MyHabit.DTO;
 
 public class FollowerDTO {
 
-  private Integer userID;
+  //returns zero for some reason
+  public int userId;
 
-  private Integer followerId;
+  public int followerId;
 
   public int getUserID() {
-    return userID;
+    return userId;
   }
 
   public void setUserID(int userID) {
-    this.userID = userID;
+    this.userId = userID;
   }
 
   public int getFollowerId() {
