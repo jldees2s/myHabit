@@ -1,5 +1,5 @@
 
-html, body {
+html {
 margin: 10px;
 padding: 20px;
 }
@@ -11,23 +11,23 @@ font-weight: 300;
 }
 
 p {
-padding: 10px 20px;
+padding: 15px 20px;
 line-height: 1.8;
-font-size: 9pt;
+font-size: 10pt;
 }
 
 ul li {
 padding-right: 10px;
-line-height: 1.6;
+font-size: 9pt;
 }
 
 h3 {
 padding: 5px 20px;
 margin: 0;
+font-size: 15pt;
 }
 
 h4 {
-padding: 5px 20px;
 margin: 0;
 }
 
@@ -36,76 +36,55 @@ padding: 5px 20px;
 margin: 0;
 }
 
-div#header {
-position: relative;
+body {
+background-size:cover; 
+height: auto;
+background-repeat: no-repeat;
+background-position: center center;
 }
 
-div#header h1 {
-height: 80px;
-line-height: 80px;
-padding-left: 10px;
-background: #1B4FD8;
-color: #292929;
-margin-top: 10px;
+div#entirepage-container {
+border: 2px solid none;
 }
 
-div#header a {
-position: absolute;
-right: 15px;
-top: 23px;
-padding: 10px;
-color: white;
-text-decoration: none;
+div#content-container {
+margin: 90px;
 }
 
-div#sidebar {
-background: #7cb71c;
-border-style: solid;
-border-color: black;
+div#habits-container {
+border: 2px solid #D8D8D8;
+background-color: rgb(255, 255, 255, .75);
 }
 
-div#navigation li {
-list-style: none;
+div#container2 {
+border: 2px solid none;;
 }
 
 div#extra {
-background: white;
-margin-top: 10px;
-border: 2px solid #d8d8d8;
+border: 2px solid #D8D8D8;
+background-color: rgb(255, 255, 255, .75);
+margin-top: 20px;
+width: 23%;
 }
 
-div#footer {
-background: white;
-color: black;
-}
-
-div#footer p {
-padding: 30px 10px;
-align: center;
-}
-
-div#wrapper {
+div#habit-statuswrapper {
 float: right;
-width: 95%;
-margin-left: -200px;
+width: 75%;
+border: 2px solid none;
 }
 
-div#content {
-margin-left: 200px;
-margin-top: 10px;
-border: 2px solid #d8d8d8;
+div#wrapper2 {
+float: right;
+width: 75%;
+margin-top: 20px;
+border: 2px solid #D8D8D8;
+background-color: rgb(255, 255, 255, .75);
 }
 
-div#navigation {
-float: left;
-width: 200px;
-border: 2px solid #d8d8d8;
-}
-
-div#extra {
-float: left;
-clear: left;
-width: 200px;
+div#photobox {
+width: 23%;
+border: 2px solid #D8D8D8;
+background-color: rgb(255, 255, 255, .75);
 }
 
 div#footer {
@@ -114,37 +93,63 @@ clear: both;
 width: 100%;
 }
 
+div#footer {
+border: 2px solid none;
+color: black;
+}
+
+div#footer p {
+padding: 30px 10px;
+}
+
 div.image::before {
 border-radius: 40px;
 padding-left: 10px;
 }
 
-.container {
-max-width: 680px;
-margin-top: 20px;
+img {
+height: 92%;
+width: 92%;
+border-radius: 50%;
+margin: auto;
+display: block;
 }
 
-.container2 {
-max-width: 680px;
-margin-top: 20px;
+/*---------------online bug---------------*/
+.icon-container {
+width: 92%;
+height: 92%;
+position: relative;
 }
 
-.padding
-{
-width:175px;
-height:175px;
-margin: 10px;
+.online-circle {
+width: 15px;
+height: 15px;
+border-radius: 50%;
+background-color: green;
+border: 2px solid white;
+bottom: 5%;
+right: 70%;
+position: absolute;
+}
+
+/*---------------status box---------------*/
+
+.statuscontainer {
+max-width: 1250px;
+padding: 20px;
+margin-bottom: 20px;
+border: 2px solid #D8D8D8;
+background-color: rgb(255, 255, 255, .75);
 }
 
 .button-group {
-margin-bottom: 20px;
+margin-bottom: 0px;
 }
 
 .posts {
 clear: both;
 list-style: none;
-padding-left: 0;
-width: 100%;
 }
 
 .posts li {
@@ -152,9 +157,7 @@ background-color: #fff;
 border: 1px solid #d8d8d8;
 padding-top: 10px;
 padding-left: 20px;
-padding-right: 20px;
-padding-bottom: 10px;
-margin-bottom: 10px;
+padding-right: 0px;
 word-wrap: break-word;
 min-height: 42px;
 }
