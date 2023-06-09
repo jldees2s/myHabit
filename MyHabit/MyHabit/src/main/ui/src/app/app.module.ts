@@ -17,6 +17,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HomepageComponent } from './homepage/homepage.component';
 import { CreateHabitComponent } from './create-habit/create-habit.component';
+import { HabitComponent } from './habit/habit.component';
 
 const routes: Routes = [
   {path:"", component: HomepageComponent},
@@ -39,7 +40,8 @@ const routes: Routes = [
     RegistrationComponent,
     HomepageComponent,
     ProfileComponent,
-    CreateHabitComponent
+    CreateHabitComponent,
+    HabitComponent
   ],
   imports: [
     // FlexLayoutModule,
