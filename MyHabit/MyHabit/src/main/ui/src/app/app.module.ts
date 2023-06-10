@@ -27,7 +27,7 @@ const routes: Routes = [
   {path: "timeline", component: TimelineComponent},
   {path:"registration", component: RegistrationComponent},
   {path:"homepage", component: HomepageComponent},
-  {path:"createHabit", component: CreateHabitComponent}
+  {path:"createhabit", component: CreateHabitComponent}
 
 ]
 

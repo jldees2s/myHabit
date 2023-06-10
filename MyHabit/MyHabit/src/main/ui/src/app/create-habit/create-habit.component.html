@@ -21,18 +21,24 @@
             
         </div>
 
-    <form action="action_page.php">
-
+        <form  #habitForm="ngForm" (ngSubmit)="onAddHabit()">
+        <fieldset>
             <div class="form-group">
+            
+                <label for="name">Habit Name</label>  
 
-                <input type="text" class="habitname" rows="4" placeholder="Habit Name">
-                <input type="text" class="habitdescription" rows="4" placeholder="Description">
+                    <input name="name" required ngModel #name="ngModel" id="name" type="text" class="form-control" placeholder="Habit Name">
+
+                <label for="Description">Description:</label>
+
+                    <input name="description" required ngModel #name="ngModel" id="description" type="text" class="form-control" placeholder="Habit Description">
 
                 <br>
 
-                <button type="submit" class="createbtn">Create</button>    
+                <button type="submit" value="Submit" class="createbtn">Create</button>
+                   
             </div>
-            
+        </fieldset>    
     </form>
 
 
