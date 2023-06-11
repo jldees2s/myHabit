@@ -1,4 +1,4 @@
-// export interface habit {
-//     habitName: string;
-//     description: string;
-// }
+export interface Habit {
+  name: string;
+  description: string;
+}
