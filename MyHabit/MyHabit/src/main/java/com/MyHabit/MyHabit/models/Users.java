@@ -25,12 +25,7 @@ public class Users {
   private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
   // merged profile fields
-  edit-profilesComponent
   @Size(max = 35)
-
-
-  @Size(min = 1, max = 35)
-  main
   private String firstName;
 
   @Size(max = 35)
