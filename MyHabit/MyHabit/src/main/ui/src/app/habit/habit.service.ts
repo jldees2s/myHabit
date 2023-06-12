@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Habit } from "./habit";
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class HabitService {
   private apiServerUrl = '';
 
@@ -25,4 +25,3 @@ export class HabitService {
     return this.http.delete<void>(`${this.apiServerUrl}/habit/delete${habitId}`)
   }
 }
-
