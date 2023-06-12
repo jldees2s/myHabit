@@ -16,21 +16,29 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HomepageComponent } from './homepage/homepage.component';
+
+import { CreateHabitComponent } from './create-habit/create-habit.component';
+import { HabitComponent } from './habit/habit.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 // SERVICES
 // import { EditProfileService } from './edit-profile/edit-profile.service';
 
+
 const routes: Routes = [
-  { path: "", component: HomepageComponent },
-  { path: "login", component: UserloginComponent },
-  { path: "profile", component: ProfileComponent },
-  { path: "registration", component: RegistrationComponent },
-  { path: "timeline", component: TimelineComponent },
-  { path: "registration", component: RegistrationComponent },
-  { path: "homepage", component: HomepageComponent },
-  {
-    path: "edit/:id", component: EditProfileComponent },
+  {path: "", component: HomepageComponent },
+  {path: "login", component: UserloginComponent },
+  {path: "profile", component: ProfileComponent },
+  {path: "registration", component: RegistrationComponent },
+  {path: "timeline", component: TimelineComponent },
+  {path: "registration", component: RegistrationComponent },
+  {path: "timeline", component: TimelineComponent},
+  {path:"registration", component: RegistrationComponent},
+  {path:"homepage", component: HomepageComponent},
+  {path:"createhabit", component: CreateHabitComponent},
+  {path: "homepage", component: HomepageComponent },
+  {path: "edit/:id", component: EditProfileComponent }
+
 
 ]
 
@@ -43,7 +51,9 @@ const routes: Routes = [
     RegistrationComponent,
     HomepageComponent,
     ProfileComponent,
-    EditProfileComponent,
+    CreateHabitComponent,
+    HabitComponent,
+    EditProfileComponent
   ],
   imports: [
     // FlexLayoutModule,
