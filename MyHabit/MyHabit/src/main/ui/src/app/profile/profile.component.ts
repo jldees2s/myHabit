@@ -14,18 +14,16 @@ export class ProfileComponent implements OnInit {
   constructor(private http: HttpClient,
     private router: Router) { }
 
-ngOnInit(): void {
-if(!localStorage.authToken){
-        this.router.navigate(['/registration'])
-        } else {
-        let url = `http://localhost:8080/profile/${localStorage.authToken}`
-        this.http.get<any>(url).subscribe(res =>{
+  ngOnInit(): void {
+    if (!localStorage.authToken) {
+      this.router.navigate(['/registration'])
+    } else {
+      let url = `http://localhost:8080/profile/${localStorage.authToken}`
+      this.http.get<any>(url).subscribe(res => {
         this.userProfile = res;
-        })
-      }
+      })
     }
   }
-
 
 //Query Selectors  
 const habits = document.querySelectorAll('.habit');
@@ -57,3 +55,5 @@ habits.forEach(habit => {
     // habit.classList.toggle('completed');
   })
 })
+}
+
