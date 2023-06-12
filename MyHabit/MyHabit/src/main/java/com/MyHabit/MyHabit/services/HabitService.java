@@ -21,16 +21,16 @@ public class HabitService {
 
   // METHODS
   // add new habit
-  public Habit addHabit(Habit habit, String name, String description) {
-    habit.setName(name);
-    habit.setDescription(description);
+  public Habit addHabit(Habit habit) {
+    // habit.setName(name);
+    // habit.setDescription(description);
     return habitRepo.save(habit);
   }
 
   // update existing habit - needs @PutMapping
-  public Habit updateHabit(Habit habit, String name, String description) {
-    habit.setName(name);
-    habit.setDescription(description);
+  public Habit updateHabit(Habit habit) {
+    // habit.setName(name);
+    // habit.setDescription(description);
     return habitRepo.save(habit);
   }
 

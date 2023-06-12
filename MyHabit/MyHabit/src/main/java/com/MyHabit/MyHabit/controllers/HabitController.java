@@ -29,15 +29,15 @@ public class HabitController {
   // METHODS
   // add new habit
   @PostMapping("/add")
-  public ResponseEntity<Habit> addHabit(@RequestBody Habit habit, String name, String description) {
-    Habit newHabit = habitService.addHabit(habit, name, description);
+  public ResponseEntity<Habit> addHabit(@RequestBody Habit habit) {
+    Habit newHabit = habitService.addHabit(habit);
     return new ResponseEntity<>(newHabit, HttpStatus.CREATED);
   }
 
   // update habit
   @PutMapping("/update")
-  public ResponseEntity<Habit> updateHabit(@RequestBody Habit habit, String name, String description) {
-    Habit updatedHabit = habitService.updateHabit(habit, name, description);
+  public ResponseEntity<Habit> updateHabit(@RequestBody Habit habit) {
+    Habit updatedHabit = habitService.updateHabit(habit);
     return new ResponseEntity<>(updatedHabit, HttpStatus.OK);
   }
 

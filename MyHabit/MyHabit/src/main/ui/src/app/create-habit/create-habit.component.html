@@ -21,14 +21,14 @@
             
         </div>
 
-        <form  #habitForm="ngForm" (ngSubmit)="onAddHabit()">
+        <form  #habitForm="ngForm" (ngSubmit)="onAddHabit(habitForm)">
         <fieldset>
             <div class="form-group">
             
                 <label for="name">Habit Name</label>  
 
                     <input name="name" required ngModel #name="ngModel" id="name" type="text" class="form-control" placeholder="Habit Name">
-
+                <br>
                 <label for="Description">Description:</label>
 
                     <input name="description" required ngModel #name="ngModel" id="description" type="text" class="form-control" placeholder="Habit Description">

@@ -5,7 +5,7 @@ import { Habit } from "./habit";
 
 @Injectable({ providedIn: 'root' })
 export class HabitService {
-  private apiServerUrl = '';
+  private apiServerUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
   
