@@ -11,8 +11,10 @@ import { profile } from './profile'
 
 export class ProfileComponent implements OnInit {
   public userProfile!: profile
+
   constructor(private http: HttpClient,
-    private router: Router) { }
+              private router: Router) {
+  }
 
   ngOnInit(): void {
     if (!localStorage.authToken) {
@@ -23,37 +25,28 @@ export class ProfileComponent implements OnInit {
         this.userProfile = res;
       })
     }
-  }
+  }}
 
-//Query Selectors  
-const habits = document.querySelectorAll('.habit');
-const themeBtn = document.querySelector('#modal');
-
-//functions
-const storage = {
-
-}
-
-const ui = {
-  theme() {
-    // themeBtn.classList.toggle('dark');
-    // const root = document.querySelector(':root');
-    // root.classList.toggle('dark');
-  }
-}
-
-function addHabit(){
-  let container: HTMLCollectionOf<Element> = document.getElementsByClassName(".modal-container");
-    
-  }
-    
-
-//delete
-habits.forEach(habit => {
-  habit.addEventListener('click', () => {
-    console.log('clicked');
-    // habit.classList.toggle('completed');
-  })
-})
-}
-
+// //Query Selectors
+//   const
+//   habits = document.querySelectorAll('.habit');
+//   const
+//   themeBtn = document.querySelector('#modal')
+//
+// //functions
+//   const
+//   storage = {}
+//
+//   const
+//   ui = {
+//     theme() {
+//       // themeBtn.classList.toggle('dark');
+//       // const root = document.querySelector(':root');
+//       // root.classList.toggle('dark');
+//     }
+//   }
+// }
+// function addHabit(){
+//   let container: HTMLCollectionOf<Element> = document.getElementsByClassName(".modal-container");
+//
+//   }
